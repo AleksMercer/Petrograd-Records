@@ -64,3 +64,14 @@ button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #d1d1d1;
+}

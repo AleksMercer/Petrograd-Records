@@ -1,6 +1,5 @@
 body {
   background-color: #000000;
-  background-image: url(/Media/images/Texture/dark-brick-wall.png);
   font-family: "Courier New", Courier, monospace;
   color: white;
   display: grid;
@@ -18,15 +17,23 @@ body .wrapper {
 header {
   grid-area: header;
   display: grid;
-  grid-template: repeat(3, auto)/1100px;
-  border-bottom: 3px double white;
+  grid-template: repeat(4, auto)/1fr;
+  justify-items: center;
+  gap: 15px;
+  border-bottom: 4px double white;
+}
+header img {
+  height: 400px;
 }
 header .menu {
   display: grid;
   grid-template: 1fr/repeat(3, 1fr);
+  -moz-column-gap: 15px;
+       column-gap: 15px;
 }
 header .menu__button {
-  background-color: black;
+  color: white;
+  background-color: #000000;
 }
 
 main {
