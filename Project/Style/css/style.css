@@ -6,6 +6,20 @@ body {
   display: grid;
   grid-template: 1fr/1fr 1100px 1fr;
 }
+body .topButton {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 0, 0, 0);
+  cursor: pointer;
+  z-index: 99;
+}
+body .topButton img {
+  height: 50px;
+  width: 50px;
+}
 body h1, body h2 {
   font-size: 24px;
   letter-spacing: 2px;
