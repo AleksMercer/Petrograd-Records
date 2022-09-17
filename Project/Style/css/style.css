@@ -21,6 +21,11 @@ body .topButton img {
   height: 50px;
   width: 50px;
 }
+@media (max-width: 1099px) {
+  body .topButton {
+    background-color: rgb(230, 24, 24);
+  }
+}
 body h1, body h2 {
   font-size: 24px;
   letter-spacing: 2px;
@@ -97,7 +102,7 @@ main .stuff-and-comp__card, main .stuff-and-comp .card {
 main .stuff-and-comp__card img, main .stuff-and-comp .card img {
   height: 190px;
   border-radius: 100%;
-  border: 1px solid white;
+  box-shadow: 0px 125px 1000px 0px rgba(255, 255, 255, 0.3);
 }
 main .stuff-and-comp__card__image, main .stuff-and-comp .card__image {
   border-bottom: 1px solid white;
