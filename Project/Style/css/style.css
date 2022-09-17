@@ -7,6 +7,7 @@ body {
   grid-template: 1fr/1fr 1100px 1fr;
 }
 body .topButton {
+  display: none;
   position: fixed;
   bottom: 15px;
   right: 15px;
