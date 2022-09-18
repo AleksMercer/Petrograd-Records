@@ -93,7 +93,6 @@ main {
 
   border-bottom: 4px double white;
   
-
   .stuff-and-comp {
     display: grid;
     grid-template: repeat(3, auto) / 1fr;
@@ -123,7 +122,7 @@ main {
         height: 190px;
         border-radius: 100%;
         //border: 1px solid white;
-        box-shadow: 0px 125px 1000px 0px rgba(255, 255, 255, 0.);
+        box-shadow: 0px 115px 500px 0px rgba(255, 255, 255, 0.2);
       }
 
       &__image {
