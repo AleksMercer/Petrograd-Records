@@ -1,3 +1,20 @@
+/* ================Var=============== */
+
+$desktop-gap: 20px;
+$small-gap: 15px;
+
+// Desktop-font
+$big-font-size: 24px;
+$mid-font-size: 18px;
+$sml-font-size: 16px;
+
+// <1100px-font
+$big2-font-size: 22px;
+$mid2-font-size: 18px;
+$sml2-font-size: 16px;
+
+/* ================================== */
+
 body {
   background-color: #000000;
   background-image:url(/Media/images/Texture/dark-brick-wall.png);
@@ -6,9 +23,9 @@ body {
   color: white;
   
   display: grid;
-  grid-template: 1fr / 1fr 1100px 1fr;
+  grid-template: 1fr / 1fr minmax(1100px, 1300px) 1fr;
 
-  .topButton {
+  .top-Button {
     display: none;
     position: fixed; 
     bottom: 15px;
@@ -24,16 +41,12 @@ body {
       width: 50px;
     }
   }
-
-  @media (max-width: 1099px) {
-    .topButton {
-      background-color: rgb(230, 24, 24);
-    }
-  
+  .open-Burger, .close-Burger {
+    display: none;
   }
 
   h1, h2 {
-    font-size: 24px;
+    font-size: $big-font-size;
     letter-spacing: 2px;
     text-align: center;
   }
@@ -45,7 +58,7 @@ body {
     grid-template-areas:"header"
 		                    "main"
 		                    "footer";
-    row-gap: 20px;
+    row-gap: $desktop-gap;
     min-height: 100vh;
   }
 }
@@ -55,12 +68,12 @@ header {
   display: grid;
   grid-template: repeat(4, auto) / 1fr;
   justify-items: center;
-  row-gap: 20px;
+  row-gap: $desktop-gap;
 
   border-bottom: 4px double white;
 
   img {
-    height: 400px;
+    height: 100%;
   }
 
   .menu {
@@ -71,7 +84,7 @@ header {
     &__button {
       color: white;
       background-color: #ff000000;
-      font-size: 18px;
+      font-size: $mid-font-size;
       
       height: 35px;
       
@@ -89,18 +102,18 @@ main {
   grid-area: main;
   display: grid;
   grid-template: repeat(3, auto) / 1fr;
-  row-gap: 20px;
+  row-gap: $desktop-gap;
 
   border-bottom: 4px double white;
   
   .stuff-and-comp {
     display: grid;
     grid-template: repeat(3, auto) / 1fr;
-    row-gap: 20px;
+    row-gap: $desktop-gap;
 
     &__info {
       text-align: center;
-      font-size: 18px;
+      font-size: $mid-font-size;
       span {
         font-weight: bold;
       }
@@ -121,7 +134,6 @@ main {
       img {
         height: 190px;
         border-radius: 100%;
-        //border: 1px solid white;
         box-shadow: 0px 115px 500px 0px rgba(255, 255, 255, 0.2);
       }
 
@@ -131,17 +143,18 @@ main {
       }
       
       &__name {
-        font-size: 18px;
+        font-size: $mid-font-size;
         font-weight: bold;
       }
       
       &__name2 {
-        font-size: 16px;
+        font-size: $sml-font-size;
         font-weight: bold;
       }
 
       &__description {
         text-align: center;
+        font-size: $sml-font-size;
       }
     }
   }
@@ -149,13 +162,13 @@ main {
   .service-and-price {
     display: grid;
     grid-template: repeat(2, auto) / 1fr;
-    row-gap: 20px;
+    row-gap: $desktop-gap;
 
     &__cards {
       display: grid;
       grid-template: 1fr 1fr / repeat(4, 250px);
       justify-content: space-between;
-      row-gap: 20px;
+      row-gap: $desktop-gap;
     }
 
     &__card, .card2 {
@@ -175,17 +188,19 @@ main {
       }
 
       &__name {
-        font-size: 18px;
+        font-size: $mid-font-size;
         font-weight: bold;
       }
 
       &__price {
         font-weight: bold;
+        font-size: $mid-font-size;
       }
 
       a {
         text-decoration: none;
         color: white;
+        font-size: $sml-font-size;
       }
 
       a:hover {
@@ -200,12 +215,12 @@ main {
   .contact-details {
     display: grid;
     grid-template: repeat(3, auto) / 1fr;
-    row-gap: 20px;
+    row-gap: $desktop-gap;
 
     &__block, .block {
       display: grid;
-      grid-template: 1fr auto auto / repeat(2, 1fr);
-      row-gap: 20px;
+      grid-template: repeat(3, auto) / repeat(2, 1fr);
+      row-gap: $desktop-gap;
 
       &__map {
         grid-column: 1 / 3;
@@ -218,7 +233,7 @@ main {
       }
 
       p {
-        font-size: 18px;
+        font-size: $mid-font-size;
         text-align: center;
         span {
           font-weight: bold;
@@ -238,7 +253,6 @@ main {
 footer {
   grid-area: footer;
 
-
   p {
     text-align: center;
     a {
@@ -250,3 +264,165 @@ footer {
     }
   }
 }
+
+@media (max-width: 1100px) { // то что происходит до 1100px 
+  body {
+    grid-template: 1fr / 1fr minmax(auto, 1100px) 1fr;
+
+    .button-block { 
+   
+      .open-Burger, .close-Burger {
+        display: block;
+        position: fixed; 
+        top: 15px;
+        right: 15px;
+        outline: none;
+        border: none;
+        background-color: rgba(255, 0, 0, 0);
+        cursor: pointer;
+        z-index: 99;
+        
+        img {
+          height: 35px;
+          width: 35px;
+        }
+      }
+  
+      .top-Button {
+        img {
+          height: 35px;
+          width: 35px;
+        }
+      }
+    }
+
+    h1, h2 {
+      font-size: $big2-font-size;
+    }
+
+    .wrapper {
+      row-gap: $small-gap;
+    }
+  }
+
+  header {
+    grid-template: repeat(3, auto) / 1fr;
+    row-gap: $desktop-gap;
+
+    img {
+      height: 95%;
+    }
+
+    .menu {
+      display: none;
+    }
+  }
+
+  main {
+    row-gap: $small-gap;
+      
+    .stuff-and-comp {
+      row-gap: $small-gap;
+  
+      &__info {
+        font-size: $mid2-font-size;
+      }
+  
+      &__cards {
+        grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+        gap: $small-gap;
+      }
+  
+      .double {
+        grid-column: 1 / 3;
+        order: -2;
+      }
+
+      &__card, .card {
+        justify-items: center;
+        row-gap: 10px;
+  
+        img {
+          height: 90%;
+          box-shadow: 0px 115px 500px 0px rgba(255, 255, 255, 0.4);
+        }
+  
+        /*&__image {
+          height: 40vh;
+          width: 40vw;
+        }*/
+        
+        &__name {
+          font-size: $mid2-font-size;
+        }
+        
+        &__name2 {
+          font-size: $sml2-font-size;
+        }
+  
+        &__description {
+          font-size: $sml2-font-size;
+        }
+      }
+    }
+  
+    .service-and-price {
+      row-gap: $small-gap;
+  
+      &__cards {
+        grid-template: repeat(4, 1fr) / repeat(2, 40vw);
+        justify-content: space-evenly;
+        row-gap: $small-gap;
+      }
+  
+      &__card, .card2 {
+        row-gap: 10px;
+  
+        img {
+          height: 100%;
+        }
+  
+        &__image {
+          border-bottom: 1px solid white;
+          width: 40vw;
+        }
+  
+        &__name {
+          font-size: $mid2-font-size;
+        }
+  
+        &__price {
+          font-size: $mid2-font-size;
+        }
+  
+        a {
+          font-size: $sml2-font-size;
+        }
+  
+      }
+    }
+    
+    .contact-details {
+      row-gap: $small-gap;
+  
+      &__block, .block {
+        grid-template: repeat(5, auto) / 1fr;
+        row-gap: $small-gap;
+  
+        &__map {
+          grid-column: 1;
+
+          iframe {
+            width: 100%;
+            height: 40vh; 
+          }
+        }
+        p {
+          font-size: $mid2-font-size;
+        }
+      }
+    }
+  }
+
+}
+

@@ -1,12 +1,14 @@
+/* ================Var=============== */
+/* ================================== */
 body {
   background-color: #000000;
   background-image: url(/Media/images/Texture/dark-brick-wall.png);
   font-family: "Courier New", Courier, monospace;
   color: white;
   display: grid;
-  grid-template: 1fr/1fr 1100px 1fr;
+  grid-template: 1fr/1fr minmax(1100px, 1300px) 1fr;
 }
-body .topButton {
+body .top-Button {
   display: none;
   position: fixed;
   bottom: 15px;
@@ -17,14 +19,12 @@ body .topButton {
   cursor: pointer;
   z-index: 99;
 }
-body .topButton img {
+body .top-Button img {
   height: 50px;
   width: 50px;
 }
-@media (max-width: 1099px) {
-  body .topButton {
-    background-color: rgb(230, 24, 24);
-  }
+body .open-Burger, body .close-Burger {
+  display: none;
 }
 body h1, body h2 {
   font-size: 24px;
@@ -49,7 +49,7 @@ header {
   border-bottom: 4px double white;
 }
 header img {
-  height: 400px;
+  height: 100%;
 }
 header .menu {
   display: grid;
@@ -118,6 +118,7 @@ main .stuff-and-comp__card__name2, main .stuff-and-comp .card__name2 {
 }
 main .stuff-and-comp__card__description, main .stuff-and-comp .card__description {
   text-align: center;
+  font-size: 16px;
 }
 main .service-and-price {
   display: grid;
@@ -150,10 +151,12 @@ main .service-and-price__card__name, main .service-and-price .card2__name {
 }
 main .service-and-price__card__price, main .service-and-price .card2__price {
   font-weight: bold;
+  font-size: 18px;
 }
 main .service-and-price__card a, main .service-and-price .card2 a {
   text-decoration: none;
   color: white;
+  font-size: 16px;
 }
 main .service-and-price__card a:hover, main .service-and-price .card2 a:hover {
   text-decoration: underline;
@@ -166,7 +169,7 @@ main .contact-details {
 }
 main .contact-details__block, main .contact-details .block {
   display: grid;
-  grid-template: 1fr auto auto/repeat(2, 1fr);
+  grid-template: repeat(3, auto)/repeat(2, 1fr);
   row-gap: 20px;
 }
 main .contact-details__block__map, main .contact-details .block__map {
@@ -204,4 +207,127 @@ footer p a {
 }
 footer p a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+  body {
+    grid-template: 1fr/1fr minmax(auto, 1100px) 1fr;
+  }
+  body .button-block .open-Burger, body .button-block .close-Burger {
+    display: block;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    outline: none;
+    border: none;
+    background-color: rgba(255, 0, 0, 0);
+    cursor: pointer;
+    z-index: 99;
+  }
+  body .button-block .open-Burger img, body .button-block .close-Burger img {
+    height: 35px;
+    width: 35px;
+  }
+  body .button-block .top-Button img {
+    height: 35px;
+    width: 35px;
+  }
+  body h1, body h2 {
+    font-size: 22px;
+  }
+  body .wrapper {
+    row-gap: 15px;
+  }
+  header {
+    grid-template: repeat(3, auto)/1fr;
+    row-gap: 20px;
+  }
+  header img {
+    height: 95%;
+  }
+  header .menu {
+    display: none;
+  }
+  main {
+    row-gap: 15px;
+  }
+  main .stuff-and-comp {
+    row-gap: 15px;
+  }
+  main .stuff-and-comp__info {
+    font-size: 18px;
+  }
+  main .stuff-and-comp__cards {
+    grid-template: repeat(3, 1fr)/repeat(2, 1fr);
+    gap: 15px;
+  }
+  main .stuff-and-comp .double {
+    grid-column: 1/3;
+    order: -2;
+  }
+  main .stuff-and-comp__card, main .stuff-and-comp .card {
+    justify-items: center;
+    row-gap: 10px;
+    /*&__image {
+      height: 40vh;
+      width: 40vw;
+    }*/
+  }
+  main .stuff-and-comp__card img, main .stuff-and-comp .card img {
+    height: 90%;
+    box-shadow: 0px 115px 500px 0px rgba(255, 255, 255, 0.4);
+  }
+  main .stuff-and-comp__card__name, main .stuff-and-comp .card__name {
+    font-size: 18px;
+  }
+  main .stuff-and-comp__card__name2, main .stuff-and-comp .card__name2 {
+    font-size: 16px;
+  }
+  main .stuff-and-comp__card__description, main .stuff-and-comp .card__description {
+    font-size: 16px;
+  }
+  main .service-and-price {
+    row-gap: 15px;
+  }
+  main .service-and-price__cards {
+    grid-template: repeat(4, 1fr)/repeat(2, 40vw);
+    justify-content: space-evenly;
+    row-gap: 15px;
+  }
+  main .service-and-price__card, main .service-and-price .card2 {
+    row-gap: 10px;
+  }
+  main .service-and-price__card img, main .service-and-price .card2 img {
+    height: 100%;
+  }
+  main .service-and-price__card__image, main .service-and-price .card2__image {
+    border-bottom: 1px solid white;
+    width: 40vw;
+  }
+  main .service-and-price__card__name, main .service-and-price .card2__name {
+    font-size: 18px;
+  }
+  main .service-and-price__card__price, main .service-and-price .card2__price {
+    font-size: 18px;
+  }
+  main .service-and-price__card a, main .service-and-price .card2 a {
+    font-size: 16px;
+  }
+  main .contact-details {
+    row-gap: 15px;
+  }
+  main .contact-details__block, main .contact-details .block {
+    grid-template: repeat(5, auto)/1fr;
+    row-gap: 15px;
+  }
+  main .contact-details__block__map, main .contact-details .block__map {
+    grid-column: 1;
+  }
+  main .contact-details__block__map iframe, main .contact-details .block__map iframe {
+    width: 100%;
+    height: 40vh;
+  }
+  main .contact-details__block p, main .contact-details .block p {
+    font-size: 18px;
+  }
 }
