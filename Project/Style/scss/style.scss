@@ -1,7 +1,7 @@
 /* ================Var=============== */
 
 $desktop-gap: 20px;
-$small-gap: 15px;
+$small-gap: 10px;
 
 // Desktop-font
 $big-font-size: 24px;
@@ -9,15 +9,15 @@ $mid-font-size: 18px;
 $sml-font-size: 16px;
 
 // <1100px-font
-$big2-font-size: 22px;
-$mid2-font-size: 18px;
-$sml2-font-size: 16px;
+$big2-font-size: 20px;
+$mid2-font-size: 16px;
+$sml2-font-size: 14px;
 
 /* ================================== */
 
 body {
   background-color: #000000;
-  background-image:url(./Media/images/Texture/dark-brick-wall.png);
+  background-image:url(/Media/images/Texture/dark-brick-wall.png);
   
   font-family:'Courier New', Courier, monospace;
   color: white;
@@ -175,7 +175,6 @@ main {
       display: grid;
       grid-template: repeat(4, auto) / 1fr;
       justify-items: center;
-      justify-content: center;
       row-gap: 15px;
 
       img {
@@ -266,8 +265,9 @@ footer {
 }
 
 @media (max-width: 1100px) { // то что происходит до 1100px 
+
   body {
-    grid-template: 1fr / 1fr minmax(auto, 1100px) 1fr;
+    grid-template: 1fr / 1fr minmax(300px, 1100px) 1fr;
 
     .button-block { 
    
@@ -283,15 +283,15 @@ footer {
         z-index: 99;
         
         img {
-          height: 35px;
-          width: 35px;
+          height: 30px;
+          width: 30px;
         }
       }
   
       .top-Button {
         img {
-          height: 35px;
-          width: 35px;
+          height: 30px;
+          width: 30px;
         }
       }
     }
@@ -310,7 +310,7 @@ footer {
     row-gap: $desktop-gap;
 
     img {
-      height: 95%;
+      width: 95vw;
     }
 
     .menu {
@@ -339,18 +339,15 @@ footer {
       }
 
       &__card, .card {
-        justify-items: center;
         row-gap: 10px;
   
         img {
-          height: 90%;
           box-shadow: 0px 115px 500px 0px rgba(255, 255, 255, 0.4);
         }
   
-        /*&__image {
-          height: 40vh;
-          width: 40vw;
-        }*/
+        &__image {
+
+        }
         
         &__name {
           font-size: $mid2-font-size;
@@ -370,21 +367,18 @@ footer {
       row-gap: $small-gap;
   
       &__cards {
-        grid-template: repeat(4, 1fr) / repeat(2, 40vw);
-        justify-content: space-evenly;
-        row-gap: $small-gap;
+        grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+        gap: $small-gap;
       }
   
       &__card, .card2 {
         row-gap: 10px;
   
         img {
-          height: 100%;
+          
         }
   
         &__image {
-          border-bottom: 1px solid white;
-          width: 40vw;
         }
   
         &__name {
@@ -406,14 +400,14 @@ footer {
       row-gap: $small-gap;
   
       &__block, .block {
-        grid-template: repeat(5, auto) / 1fr;
-        row-gap: $small-gap;
+        justify-items: center;
+        align-items: center;
+        gap: $small-gap;
   
         &__map {
-          grid-column: 1;
 
           iframe {
-            width: 100%;
+            width: 90vw;
             height: 40vh; 
           }
         }
@@ -424,5 +418,10 @@ footer {
     }
   }
 
+  footer {
+    p {
+      font-size: $sml2-font-size;
+    }
+  }
 }
 
