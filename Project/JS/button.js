@@ -20,8 +20,23 @@ topButton = () => {
 //end Top button
 
 //start Burger button
+const openButton = document.getElementById("opnBrg").style.display = "none";
+const closeButton = document.getElementById("clsBrg").style.display = "none";
 
+burherButton = () => {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        document.getElementById("topBtn").style.display = "block";
+    } else {
+        document.getElementById("topBtn").style.display = "none";
+    }
+}
 
+topButton = () => {
+  
+  topButton.scrollIntoView({
+        block: "start", inline: "nearest", behavior: "smooth"
+    });
+}
 
 //end Burger button
 

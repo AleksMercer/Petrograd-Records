@@ -16,8 +16,9 @@ $sml2-font-size: 14px;
 /* ================================== */
 
 body {
+  background:url(/Media/images/Texture/dark-brick-wall.png);
   background-color: #000000;
-  background-image:url(/Media/images/Texture/dark-brick-wall.png);
+ 
   
   font-family:'Courier New', Courier, monospace;
   color: white;
@@ -344,10 +345,6 @@ footer {
         img {
           box-shadow: 0px 115px 500px 0px rgba(255, 255, 255, 0.4);
         }
-  
-        &__image {
-
-        }
         
         &__name {
           font-size: $mid2-font-size;
@@ -373,14 +370,7 @@ footer {
   
       &__card, .card2 {
         row-gap: 10px;
-  
-        img {
-          
-        }
-  
-        &__image {
-        }
-  
+
         &__name {
           font-size: $mid2-font-size;
         }

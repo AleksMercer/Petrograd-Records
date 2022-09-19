@@ -1,8 +1,8 @@
 /* ================Var=============== */
 /* ================================== */
 body {
+  background: url(/Media/images/Texture/dark-brick-wall.png);
   background-color: #000000;
-  background-image: url(/Media/images/Texture/dark-brick-wall.png);
   font-family: "Courier New", Courier, monospace;
   color: white;
   display: grid;
