@@ -9,17 +9,16 @@ $mid-font-size: 18px;
 $sml-font-size: 16px;
 
 // <1100px-font
-$big2-font-size: 20px;
+$big2-font-size: 18px;
 $mid2-font-size: 16px;
 $sml2-font-size: 14px;
 
 /* ================================== */
 
 body {
-  background:url(/Media/images/Texture/dark-brick-wall.png);
+  background: url('/Media/images/Texture/dark-brick-wall.png');
   background-color: #000000;
- 
-  
+
   font-family:'Courier New', Courier, monospace;
   color: white;
   
@@ -42,8 +41,9 @@ body {
       width: 50px;
     }
   }
+
   .open-Burger, .close-Burger {
-    display: none;
+    display: none; 
   }
 
   h1, h2 {
@@ -268,34 +268,37 @@ footer {
 @media (max-width: 1100px) { // то что происходит до 1100px 
 
   body {
-    grid-template: 1fr / 1fr minmax(300px, 1100px) 1fr;
+    grid-template: 1fr / 1fr minmax(auto, 1100px) 1fr;
 
-    .button-block { 
-   
-      .open-Burger, .close-Burger {
-        display: block;
-        position: fixed; 
-        top: 15px;
-        right: 15px;
-        outline: none;
-        border: none;
-        background-color: rgba(255, 0, 0, 0);
-        cursor: pointer;
-        z-index: 99;
-        
-        img {
-          height: 30px;
-          width: 30px;
-        }
-      }
-  
-      .top-Button {
-        img {
-          height: 30px;
-          width: 30px;
-        }
+  .button-block { 
+
+    .open-Burger {
+      display: block;
+    }
+
+    .open-Burger, .close-Burger {
+      position: fixed; 
+      top: 15px;
+      right: 15px;
+      outline: none;
+      border: none;
+      background-color: rgba(255, 0, 0, 0);
+      cursor: pointer;
+      z-index: 99;
+      
+      img {
+        height: 30px;
+        width: 30px;
       }
     }
+  
+    .top-Button {
+      img {
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
 
     h1, h2 {
       font-size: $big2-font-size;

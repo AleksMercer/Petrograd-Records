@@ -1,7 +1,7 @@
 /* ================Var=============== */
 /* ================================== */
 body {
-  background: url(/Media/images/Texture/dark-brick-wall.png);
+  background: url("/Media/images/Texture/dark-brick-wall.png");
   background-color: #000000;
   font-family: "Courier New", Courier, monospace;
   color: white;
@@ -210,10 +210,12 @@ footer p a:hover {
 
 @media (max-width: 1100px) {
   body {
-    grid-template: 1fr/1fr minmax(300px, 1100px) 1fr;
+    grid-template: 1fr/1fr minmax(auto, 1100px) 1fr;
+  }
+  body .button-block .open-Burger {
+    display: block;
   }
   body .button-block .open-Burger, body .button-block .close-Burger {
-    display: block;
     position: fixed;
     top: 15px;
     right: 15px;
@@ -232,7 +234,7 @@ footer p a:hover {
     width: 30px;
   }
   body h1, body h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
   body .wrapper {
     row-gap: 10px;

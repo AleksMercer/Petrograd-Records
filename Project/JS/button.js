@@ -1,6 +1,6 @@
 // start Top button 
 
-window.onscroll = () => {scrollCoord()};
+window.onscroll = () => { scrollCoord() };
 
 scrollCoord = () => {
     if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
@@ -11,8 +11,8 @@ scrollCoord = () => {
 }
 
 topButton = () => {
-  const topButton = document.querySelector('header');
-  topButton.scrollIntoView({
+    const topButton = document.querySelector('header');
+    topButton.scrollIntoView({
         block: "start", inline: "nearest", behavior: "smooth"
     });
 }
@@ -20,22 +20,18 @@ topButton = () => {
 //end Top button
 
 //start Burger button
-const openButton = document.getElementById("opnBrg").style.display = "none";
-const closeButton = document.getElementById("clsBrg").style.display = "none";
+const openButton = document.getElementById("opnBrg");
+const closeButton = document.getElementById("clsBrg");
 
-burherButton = () => {
-    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-        document.getElementById("topBtn").style.display = "block";
-    } else {
-        document.getElementById("topBtn").style.display = "none";
-    }
+openBurger = () => {
+    openButton.style.display = "none"
+    closeButton.style.display = "block";
+    document.body.style = "filter: blur(3px)";
 }
-
-topButton = () => {
-  
-  topButton.scrollIntoView({
-        block: "start", inline: "nearest", behavior: "smooth"
-    });
+closeBurger = () => {
+    openButton.style.display = "block"
+    closeButton.style.display = "none";
+    document.body.style = "";
 }
 
 //end Burger button
