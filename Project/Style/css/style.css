@@ -1,7 +1,7 @@
 /* ================Var=============== */
 /* ================================== */
 body {
-  background: url(../Texture/dark-brick-wall.png);
+  background: url("../../Media/images/Texture/dark-brick-wall.png");
   background-color: #000000;
   font-family: "Courier New", Courier, monospace;
   color: white;
@@ -210,6 +210,8 @@ footer p a:hover {
 
 @media (max-width: 1100px) {
   body {
+    height: 100vh;
+    width: 100vw;
     grid-template: 1fr/1fr minmax(auto, 1100px) 1fr;
   }
   body .button-block .open-Burger {

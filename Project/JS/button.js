@@ -22,16 +22,26 @@ topButton = () => {
 //start Burger button
 const openButton = document.getElementById("opnBrg");
 const closeButton = document.getElementById("clsBrg");
+const openeerDiv = document.querySelector('.opner');
 
 openBurger = () => {
-    openButton.style.display = "none"
+    openButton.style.display = "none";
     closeButton.style.display = "block";
-    document.body.style = "filter: blur(3px)";
+    openeerDiv.style.cssText = 
+        `
+        display: block;    
+        height: 100%; 
+        width: 100%; 
+        position: fixed; 
+        backdrop-filter: blur(10px);
+        `;
+    document.body.style.overflow = "hidden"; 
 }
 closeBurger = () => {
-    openButton.style.display = "block"
+    openButton.style.display = "block";
     closeButton.style.display = "none";
-    document.body.style = "";
+    openeerDiv.style.cssText = `display: none;`;
+    document.body.style.overflow = ""; 
 }
 
 //end Burger button
