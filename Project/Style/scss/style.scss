@@ -9,9 +9,9 @@ $mid-font-size: 18px;
 $sml-font-size: 16px;
 
 // <1100px-font
-$big2-font-size: 18px;
-$mid2-font-size: 16px;
-$sml2-font-size: 14px;
+$big2-font-size: 17px;
+$mid2-font-size: 15px;
+$sml2-font-size: 13px;
 
 /* ================================== */
 
@@ -131,16 +131,20 @@ main {
       grid-template: repeat(3, auto) 1fr / 1fr;
       justify-items: center;
       row-gap: 15px;
-
-      img {
-        height: 190px;
-        border-radius: 100%;
-        box-shadow: 0px 115px 500px 0px rgba(255, 255, 255, 0.2);
-      }
-
+  
       &__image {
+        display: grid;
+        grid-template: 1fr auto / 1fr;
+        row-gap: 15px;
+
         border-bottom: 1px solid white;
-        height: 205px;
+          
+        img {
+          width: 100%;
+          object-fit: cover;
+          border-radius: 100%;
+          box-shadow: 0px 115px 500px 0px rgba(255, 255, 255, 0.2);
+        }
       }
       
       &__name {
@@ -178,13 +182,13 @@ main {
       justify-items: center;
       row-gap: 15px;
 
-      img {
-        height: 250px;
-      }
-
       &__image {
         border-bottom: 1px solid white;
-        height: 265px;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
       }
 
       &__name {
@@ -268,8 +272,6 @@ footer {
 @media (max-width: 1100px) { // то что происходит до 1100px 
 
   body {
-    height: 100%;
-    width: 100%;
     grid-template: 1fr / 1fr minmax(auto, 1100px) 1fr;
 
   .button-block { 
@@ -358,18 +360,25 @@ footer {
         grid-template: repeat(3, 1fr) / repeat(2, 1fr);
         gap: $small-gap;
       }
-  
+      
       .double {
+        
+        width: 50%;
         grid-column: 1 / 3;
-        order: -2;
+        order: -2;     
       }
 
       &__card, .card {
+        margin: 0 auto;
+        max-width: 350px;
+
         row-gap: 10px;
-  
-        img {
-          box-shadow: 0px 115px 500px 0px rgba(255, 255, 255, 0.4);
+        &__image {
+          img {
+            box-shadow: 0px 115px 500px 0px rgba(255, 255, 255, 0.4);
+          }
         }
+      
         
         &__name {
           font-size: $mid2-font-size;
@@ -394,7 +403,19 @@ footer {
       }
   
       &__card, .card2 {
+        margin: 0 auto;
+        max-width: 350px;
+
         row-gap: 10px;
+
+        &__image {
+          border-bottom: 1px solid white;
+  
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
 
         &__name {
           font-size: $mid2-font-size;
@@ -440,3 +461,67 @@ footer {
   }
 }
 
+@media (min-width: 550px) { // то что происходит до 1100px 
+  body {
+
+    h1, h2 {
+      font-size: $big-font-size;
+    }
+  }
+
+  main {
+      
+    .stuff-and-comp {
+      &__info {
+        font-size: $mid-font-size;
+      }
+
+      &__card, .card {
+         
+        &__name {
+          font-size: $mid-font-size;
+        }
+        
+        &__name2 {
+          font-size: $sml-font-size;
+        }
+  
+        &__description {
+          font-size: $sml-font-size;
+        }
+      }
+    }
+  
+    .service-and-price {
+  
+      &__card, .card2 {   
+
+        &__name {
+          font-size: $mid-font-size;
+        }
+  
+        &__price {
+          font-size: $mid-font-size;
+        }
+  
+        a {
+          font-size: $sml-font-size;
+        }
+  
+      }
+    }
+    
+    .contact-details {
+      p {
+        font-size: $mid-font-size;
+      }
+    }
+  }
+
+  footer {
+    p {
+      font-size: $sml-font-size;
+    }
+  }
+
+}
