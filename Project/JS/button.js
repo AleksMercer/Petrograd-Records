@@ -10,9 +10,10 @@ scrollCoord = () => {
     }
 }
 
+const topButtn = document.querySelector('header');
+
 topButton = () => {
-    const topButton = document.querySelector('header');
-    topButton.scrollIntoView({
+    topButtn.scrollIntoView({
         block: "start", inline: "nearest", behavior: "smooth"
     });
 }
@@ -20,8 +21,6 @@ topButton = () => {
 //end Top button
 
 //start Burger button
-
-/*if (document.documentElement.clientWidth < 1100) {*/
 
     const openButton = document.getElementById("opnBrg");
     const closeButton = document.getElementById("clsBrg");
@@ -38,19 +37,21 @@ topButton = () => {
                                     width: 100%; 
                                     position: fixed; 
                                     backdrop-filter: blur(10px);
+                                    -webkit-backdrop-filter: blur(10px);
                                     z-index: 90;
         `;
         document.body.style.overflow = "hidden"; 
     }
 
-    const closeBurger = () => {
+    closeBurger = () => {
         openButton.style.display = "block";
         closeButton.style.display = "none";
         openerDiv.style.display = "none"; //cssText = `display: none;`;
         bugerNav.style.display = "none";
-        
         document.body.style.overflow = ""; 
     }
+
+    opner = () => closeBurger()
 
 //end Burger button
 
@@ -59,8 +60,9 @@ topButton = () => {
 const stuffAndComp = () => {
 	const stuffAndComp = document.querySelector('.stuff-and-comp');
 	stuffAndComp.scrollIntoView({
-        block: "center", inline: "nearest", behavior: "smooth"
+        block: "start", inline: "nearest", behavior: "smooth"
     });
+    closeBurger()
 };
 
 const serviceAndPrice = () => {
@@ -68,6 +70,7 @@ const serviceAndPrice = () => {
 	serviceAndPrice.scrollIntoView({
         block: "center", inline: "nearest", behavior: "smooth"
     });
+    closeBurger()
 };
 
 const contactDetails = () => {
@@ -75,6 +78,7 @@ const contactDetails = () => {
 	contactDetails.scrollIntoView({
         block: "start", inline: "nearest", behavior: "smooth"
     });
+    closeBurger()
 };
 
 // end Menu button
