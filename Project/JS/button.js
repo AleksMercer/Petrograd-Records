@@ -1,6 +1,6 @@
 // start Top button 
 
-window.onscroll = () => { scrollCoord() };
+window.onscroll = () => scrollCoord();
 
 scrollCoord = () => {
     if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
@@ -10,75 +10,64 @@ scrollCoord = () => {
     }
 }
 
-const topButtn = document.querySelector('header');
-
 topButton = () => {
-    topButtn.scrollIntoView({
+    const topBtn = document.querySelector('header');
+
+    topBtn.scrollIntoView({
         block: "start", inline: "nearest", behavior: "smooth"
     });
 }
 
 //end Top button
 
-//start Burger button
+//start Burger buttons
 
-    const openButton = document.getElementById("opnBrg");
-    const closeButton = document.getElementById("clsBrg");
-    const openerDiv = document.querySelector('.opner');
-    const bugerNav = document.querySelector('.burger');
+const menu = document.getElementById("menu");
+const menuBtn = document.getElementById("menuBtn");
+
+
+menuButton = () => {
+    menu.classList.remove('menu')
+    menu.classList.add('menu-mobile')
+    menuBtn.style.display = 'none';
+};
+
+menuEvent = () => {
+    menu.classList.remove('menu-mobile')
+    menu.classList.add('menu')
+    menuBtn.style.display = '';
+}
+
+//end Burger buttons
+
+// start Menu buttons
+
+navbtn = (x) => {
     
-    openBurger = () => {
-        openButton.style.display = "none";
-        closeButton.style.display = "block";
-        bugerNav.style.display = "grid";
-        openerDiv.style.cssText = `
-                                    display: block;    
-                                    height: 100%; 
-                                    width: 100%; 
-                                    position: fixed; 
-                                    backdrop-filter: blur(10px);
-                                    -webkit-backdrop-filter: blur(10px);
-                                    z-index: 90;
-        `;
-        document.body.style.overflow = "hidden"; 
+    switch (x) {
+        case 1:    
+            className  = '.stuff-and-comp';
+            break;
+        case 2:    
+            className  = '.service-and-price';
+            break;
+        case 3:    
+            className  = '.contact-details';
+            break;
     }
 
-    closeBurger = () => {
-        openButton.style.display = "block";
-        closeButton.style.display = "none";
-        openerDiv.style.display = "none"; //cssText = `display: none;`;
-        bugerNav.style.display = "none";
-        document.body.style.overflow = ""; 
+	const scroll = document.querySelector(className);
+
+	scroll.scrollIntoView({
+        block: "start", inline: "nearest", behavior: "smooth"
+    });
+
+    if (menu.classList == 'menu-mobile') {
+        menu.classList.remove('menu-mobile')
+        menu.classList.add('menu')
+        menuBtn.style.display = '';
     }
 
-    opner = () => closeBurger()
-
-//end Burger button
-
-// start Menu button
-
-const stuffAndComp = () => {
-	const stuffAndComp = document.querySelector('.stuff-and-comp');
-	stuffAndComp.scrollIntoView({
-        block: "start", inline: "nearest", behavior: "smooth"
-    });
-    closeBurger()
 };
 
-const serviceAndPrice = () => {
-	const serviceAndPrice = document.querySelector('.service-and-price');
-	serviceAndPrice.scrollIntoView({
-        block: "center", inline: "nearest", behavior: "smooth"
-    });
-    closeBurger()
-};
-
-const contactDetails = () => {
-	const contactDetails = document.querySelector('.contact-details');
-	contactDetails.scrollIntoView({
-        block: "start", inline: "nearest", behavior: "smooth"
-    });
-    closeBurger()
-};
-
-// end Menu button
+// end Menu buttons

@@ -26,11 +26,11 @@ body {
   grid-template: 1fr / 1fr minmax(1100px, 1300px) 1fr;
   column-gap: 10px;
 
-  .top-Button {
+  .topButton {
     display: none;
     position: fixed; 
     bottom: 15px;
-    right: 15px;
+    right: 0;
     outline: none;
     border: none;
     background-color: rgba(255, 0, 0, 0);
@@ -41,10 +41,6 @@ body {
       height: 50px;
       width: 50px;
     }
-  }
-
-  .open-Burger, .close-Burger, .opner, .burger {
-    display: none; 
   }
 
   h1, h2 {
@@ -75,7 +71,7 @@ header {
   border-bottom: 4px double white;
 
   img {
-    height: 100%;
+   // height: 100%;
   }
 
   .menu {
@@ -87,7 +83,6 @@ header {
       color: white;
       background-color: #ff000000;
       font-size: $mid-font-size;
-      
       height: 35px;
       
       transition: all 0.1s linear 0s;
@@ -144,7 +139,7 @@ main {
           width: 100%;
           object-fit: cover;
           border-radius: 100%;
-          box-shadow: 0px 115px 500px 0px rgba(255, 255, 255, 0.2);
+          box-shadow: 0px 100px 700px 0px rgba(255, 255, 255, 0.4);
         }
       }
       
@@ -275,35 +270,11 @@ footer {
   body {
     grid-template: 1fr / 1fr minmax(320px, 1100px) 1fr;
 
-  .button-block { 
-
-    .burger {
-      top: 15%;
-      right: 2%;
-      position: fixed;
-      z-index: 90;
-      grid-template: repeat(3, 1fr) / 1fr;
-      row-gap: 15px;
-      height: auto;
-      width: 300px;
-      
-        &__button {
-          font-size: $big-font-size;
-          color: white;
-          background-color: #00000000;
-          border: none;
-          border-bottom: solid 1px white;
-        }
-    }
-
-    .open-Burger, .opner {
+    .menuButton {
       display: block;
-    }
-
-    .open-Burger, .close-Burger {
       position: fixed; 
-      top: 15px;
-      right: 15px;
+      top: 48%;
+      right: 0%;
       outline: none;
       border: none;
       background-color: rgba(255, 0, 0, 0);
@@ -315,14 +286,13 @@ footer {
         width: 30px;
       }
     }
-  
-    .top-Button {
+
+    .topButton {
       img {
         height: 30px;
         width: 30px;
       }
     }
-  }
 
     h1, h2 {
       font-size: $big2-font-size;
@@ -340,9 +310,48 @@ footer {
     img {
       width: 100%;
     }
-
+    
     .menu {
       display: none;
+    }
+
+    .menu-mobile {
+      display: grid;
+      grid-template: repeat(3, 1fr) / 1fr;
+      row-gap: 15px;
+
+      justify-items: center;
+      align-items: center;
+
+      position: fixed;
+      height: 100%; 
+      width: 100%; 
+
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 90;
+
+      &__button {
+        color: white;
+        background-color: #ff000000;
+        font-size: $big-font-size;
+
+        width: 100%;
+        border: none;
+      }
+
+      .first {
+        align-self: end;
+      }
+      .last {
+        align-self: start;
+      }
+
+      &__button:hover {
+        font-size: $big-font-size;
+        border: none;
+        border-bottom: solid 1px white;
+      }
     }
   }
 
@@ -408,15 +417,6 @@ footer {
 
         row-gap: 10px;
 
-        &__image {
-          border-bottom: 1px solid white;
-  
-          img {
-            width: 100%;
-            object-fit: cover;
-          }
-        }
-
         &__name {
           font-size: $mid2-font-size;
         }
@@ -463,7 +463,6 @@ footer {
 
 @media (min-width: 460px) { // то что происходит после 460px 
   body {
-
     h1, h2 {
       font-size: $big-font-size;
     }
