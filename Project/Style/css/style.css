@@ -153,6 +153,15 @@ main .service-and-price__card__price, main .service-and-price .card2__price {
   font-weight: bold;
   font-size: 18px;
 }
+main .service-and-price__card .modalButton, main .service-and-price .card2 .modalButton {
+  color: white;
+  background-color: rgba(255, 0, 0, 0);
+  font-size: 16px;
+  border: none;
+}
+main .service-and-price__card .modalButton:hover, main .service-and-price .card2 .modalButton:hover {
+  box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.4);
+}
 main .service-and-price__card a, main .service-and-price .card2 a {
   text-decoration: none;
   color: white;
@@ -161,6 +170,49 @@ main .service-and-price__card a, main .service-and-price .card2 a {
 main .service-and-price__card a:hover, main .service-and-price .card2 a:hover {
   text-decoration: underline;
   color: white;
+}
+main .service-and-price .modalWindow {
+  position: fixed;
+  top: 0%;
+  right: 0%;
+  grid-template: auto/auto;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 99;
+}
+main .service-and-price .modalWindow__block {
+  display: grid;
+  grid-template: 1fr auto/1fr;
+  background-color: rgba(0, 0, 0, 0.7254901961);
+  border: 4px double white;
+  border-radius: 15px;
+}
+main .service-and-price .modalWindow__image {
+  text-align: center;
+  border-bottom: 4px double white;
+}
+main .service-and-price .modalWindow__image img {
+  height: 100%;
+  width: 100%;
+}
+main .service-and-price .modalWindow__text {
+  display: grid;
+  grid-template: repeat(4, auto)/1fr;
+  row-gap: 10px;
+  text-align: center;
+}
+main .service-and-price .modalWindow__text_small {
+  font-size: 18px;
+  text-align: left;
+  margin-left: 1%;
+}
+main .service-and-price .modalWindow__text_big {
+  font-size: 24px;
 }
 main .contact-details {
   display: grid;
@@ -216,7 +268,7 @@ footer p a:hover {
   body .menuButton {
     display: block;
     position: fixed;
-    top: 48%;
+    top: 48vh;
     right: 0%;
     outline: none;
     border: none;
@@ -225,12 +277,12 @@ footer p a:hover {
     z-index: 99;
   }
   body .menuButton img {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
   }
   body .topButton img {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
   }
   body h1, body h2 {
     font-size: 16px;
@@ -259,7 +311,7 @@ footer p a:hover {
     width: 100%;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    z-index: 90;
+    z-index: 99;
   }
   header .menu-mobile__button {
     color: white;

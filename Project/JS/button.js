@@ -10,37 +10,31 @@ scrollCoord = () => {
     }
 }
 
-topButton = () => {
-    const topBtn = document.querySelector('header');
-
-    topBtn.scrollIntoView({
-        block: "start", inline: "nearest", behavior: "smooth"
-    });
-}
-
 //end Top button
 
 //start Burger buttons
 
-const menu = document.getElementById("menu");
-const menuBtn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu").classList;
+const menuBtn = document.getElementById("menuBtn").style;
 
 
 menuButton = () => {
-    menu.classList.remove('menu')
-    menu.classList.add('menu-mobile')
-    menuBtn.style.display = 'none';
+    menu.remove('menu')
+    menu.add('menu-mobile')
+    menuBtn.display = 'none';
+    document.body.style.overflow = 'hidden';
 };
 
 menuEvent = () => {
-    menu.classList.remove('menu-mobile')
-    menu.classList.add('menu')
-    menuBtn.style.display = '';
+    menu.remove('menu-mobile')
+    menu.add('menu')
+    menuBtn.display = '';
+    document.body.style.overflow = '';
 }
 
 //end Burger buttons
 
-// start Menu buttons
+// start Menu and top buttons
 
 navbtn = (x) => {
     
@@ -54,20 +48,29 @@ navbtn = (x) => {
         case 3:    
             className  = '.contact-details';
             break;
+        case 4:    
+            className  = 'header';
+            break;
     }
 
-	const scroll = document.querySelector(className);
+    const scroll = document.querySelector(className);
 
-	scroll.scrollIntoView({
+    scroll.scrollIntoView({
         block: "start", inline: "nearest", behavior: "smooth"
     });
-
-    if (menu.classList == 'menu-mobile') {
-        menu.classList.remove('menu-mobile')
-        menu.classList.add('menu')
-        menuBtn.style.display = '';
-    }
-
 };
 
-// end Menu buttons
+// end Menu and top buttons
+
+// start dirty modalWindow code
+
+modalWindowOpen = () => {
+    document.getElementById("modalWin").style.display = 'grid';
+    document.body.style.overflow = 'hidden';
+}
+modalWindowClose = () => {
+    document.getElementById("modalWin").style.display = '';
+    document.body.style.overflow = '';
+}
+
+// end dirty modalWindow code

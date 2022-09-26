@@ -12,7 +12,7 @@
 <body>
   <nav>
     <button onclick="menuButton()" class="menuButton" id="menuBtn" hidden><img src="./Media/images/icons/MenuButtonOpen.png"></button>
-    <button onclick="topButton()" class="topButton" id="topBtn"><img src="./Media/images/icons/TopButton.png"></button>
+    <button onclick="navbtn(4)" class="topButton" id="topBtn"><img src="./Media/images/icons/TopButton.png"></button>
   </nav>
   <div class="wrapper">
     <header>
@@ -64,7 +64,7 @@
           </div>
         </div>
       </section>
-      <section class="service-and-price">
+      <!-- <section class="service-and-price">
         <h2>— Услуги и цены —</h2>
         <div class="service-and-price__cards">
           <div class="service-and-price__card card2">
@@ -72,6 +72,76 @@
             <div class="card2__name">Запись</div>
             <div class="card2__price">1 000 руб. / час</div>
             <a href="https://vk.com/petrogradrecords?w=product-210493226_7463036%2Fquery" target="_blank">— Подробности —</a>
+          </div>
+          <div class="service-and-price__card card2">
+            <div class="card2__image"><a href="https://vk.com/uslugi-210493226?w=product-210493226_7462131%2Fquery" target="_blank"><img src="./Media/images/Source img/Сведение.webp" alt=""></a></div>
+            <div class="card2__name">Сведение</div>
+            <div class="card2__price">от 2 750 руб.</div>
+            <a href="https://vk.com/uslugi-210493226?w=product-210493226_7462131%2Fquery" target="_blank">— Подробности —</a>
+          </div>
+          <div class="service-and-price__card card2">
+            <div class="card2__image"><a href="https://vk.com/uslugi-210493226?w=product-210493226_7463035%2Fquery" target="_blank"><img src="./Media/images/Source img/Мастеринг.webp" alt=""></a></div>
+            <div class="card2__name">Мастеринг</div>
+            <div class="card2__price">1 650 руб.</div>
+            <a href="https://vk.com/uslugi-210493226?w=product-210493226_7463035%2Fquery" target="_blank">— Подробности —</a>
+          </div>
+          <div class="service-and-price__card card2">
+            <div class="card2__image"><a href="https://vk.com/uslugi-210493226?w=product-210493226_7470830%2Fquery" target="_blank"><img src="./Media/images/Source img/Инструментал.webp" alt=""></a></div>
+            <div class="card2__name">Инстурментал</div>
+            <div class="card2__price">от 1 500 руб.</div>
+            <a href="https://vk.com/uslugi-210493226?w=product-210493226_7470830%2Fquery" target="_blank">— Подробности —</a>
+          </div>
+          <div class="service-and-price__card card2">
+            <div class="card2__image"><a href="https://vk.com/uslugi-210493226?w=product-210493226_7471139%2Fquery" target="_blank"><img src="./Media/images/Source img/Гострайтинг.webp" alt=""></a></div>
+            <div class="card2__name">Гострайтинг</div>
+            <div class="card2__price">от 2 000 руб.</div>
+            <a href="https://vk.com/uslugi-210493226?w=product-210493226_7471139%2Fquery" target="_blank">— Подробности —</a>
+          </div>
+          <div class="service-and-price__card card2">
+            <div class="card2__image"><a href="https://vk.com/uslugi-210493226?w=product-210493226_7471154%2Fquery" target="_blank"><img src="./Media/images/Source img/Дистрибуция.webp" alt=""></a></div>
+            <div class="card2__name">Дистрибуция</div>
+            <div class="card2__price">от 1 000 руб.</div>
+            <a href="https://vk.com/uslugi-210493226?w=product-210493226_7471154%2Fquery" target="_blank">— Подробности —</a>
+          </div>
+          <div class="service-and-price__card card2">
+            <div class="card2__image"><a href="https://vk.com/uslugi-210493226?w=product-210493226_7471188%2Fquery" target="_blank"><img src="./Media/images/Source img/Дизайн.webp" alt=""></a></div>
+            <div class="card2__name">Дизайн</div>
+            <div class="card2__price">цена договорная</div>
+            <a href="https://vk.com/uslugi-210493226?w=product-210493226_7471188%2Fquery" target="_blank">— Подробности —</a>
+          </div>
+          <div class="service-and-price__card card2">
+            <div class="card2__image"><a href="https://vk.com/uslugi-210493226?w=product-210493226_7471183%2Fquery" target="_blank"><img src="./Media/images/Source img/Обчуение.webp" alt=""></a></div>
+            <div class="card2__name">Обчуение</div>
+            <div class="card2__price">цена договорная</div>
+            <a href="https://vk.com/uslugi-210493226?w=product-210493226_7471183%2Fquery" target="_blank">— Подробности —</a>
+          </div>
+        </div>
+      </section> -->
+      <section class="service-and-price">
+        <h2>— Услуги и цены —</h2>
+        <div class="service-and-price__cards">
+          <div class="service-and-price__card card2">
+            <div class="card2__image"><a href="https://vk.com/petrogradrecords?w=product-210493226_7463036%2Fquery" target="_blank"><img src="./Media/images/Source img/Запись.webp" alt=""></a></div>
+            <div class="card2__name">Запись</div>
+            <div class="card2__price">1 000 руб. / час</div>
+            <button onclick="modalWindowOpen(1)" class="modalButton">— Подробности —</button>
+            <div class="modalWindow" onclick="modalWindowClose(1)" id="modalWin" hidden>
+              <div class="modalWindow__block">
+                <div class="modalWindow__image"><img src="./Media/images/Source img/Запись.webp" alt=""></div>
+                <div class="modalWindow__text">
+                  <p class="modalWindow__text_big">Запись</p>
+                  <ul class="modalWindow__text_small">
+                    <li>● Запись вокала и инструментов</li>  
+                    <li>● Широкий выбор парка микрофонов</li>                  
+                    <li>● Ламповые усилитель и компрессор</li>
+                    <li>● Озвучка и дикторские услуги + 500</li>
+                    <li>● AT-4040, AKG p220, Rode K2, Rode NT2-A, Shure SM58</li>
+                    <li>● Настройка микрофона под ваш голос с четким мониторингом</li>
+                  </ul>
+                  <p class="modalWindow__text_big">1 000 руб. / час</p>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="service-and-price__card card2">
             <div class="card2__image"><a href="https://vk.com/uslugi-210493226?w=product-210493226_7462131%2Fquery" target="_blank"><img src="./Media/images/Source img/Сведение.webp" alt=""></a></div>
