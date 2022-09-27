@@ -62,15 +62,45 @@ navbtn = (x) => {
 
 // end Menu and top buttons
 
-// start dirty modalWindow code
+// start modalWindow code
 
-modalWindowOpen = () => {
-    document.getElementById("modalWin").style.display = 'grid';
-    document.body.style.overflow = 'hidden';
-}
+modalWindowOpen = (x) =>  {
+    
+    switch (x) {
+        case 1:    
+            modalId = 'modalWin1';
+            break;
+        case 2:    
+            modalId = 'modalWin2';
+            break;
+        case 3:    
+            modalId = 'modalWin3';
+            break;
+        case 4:    
+            modalId = 'modalWin4';
+            break;
+        case 5:    
+            modalId = 'modalWin5';
+            break;
+        case 6:    
+            modalId = 'modalWin6';
+            break;
+        case 7:    
+            modalId = 'modalWin7';
+            break;
+        case 8:    
+            modalId = 'modalWin8';
+            break;
+    }
+
+    document.getElementById(modalId).style.display = 'grid';
+    document.body.style.overflow = 'hidden'; 
+
+    return modalId;
+};
+
 modalWindowClose = () => {
-    document.getElementById("modalWin").style.display = '';
+    document.getElementById(modalId).style.display = '';
     document.body.style.overflow = '';
 }
-
-// end dirty modalWindow code
+// end modalWindow code

@@ -20,6 +20,7 @@ body {
   background-color: #000000;
 
   font-family:'Courier New', Courier, monospace;
+  letter-spacing: 1px;
   color: white;
   
   display: grid;
@@ -70,27 +71,24 @@ header {
 
   border-bottom: 4px double white;
 
-  img {
-   // height: 100%;
-  }
-
   .menu {
     display: grid;
     grid-template: 1fr / repeat(3, 250px);
     column-gap: 15px;
 
+    
     &__button {
       color: white;
       background-color: #ff000000;
       font-size: $mid-font-size;
       height: 35px;
-      
-      transition: all 0.1s linear 0s;
+      border: none;
     }
     
     &__button:hover {
       font-size: 19px;
-      border: 2px white solid;
+      border: 3px white double;
+      border-radius: 10px;
     }
   }
 }
@@ -202,10 +200,11 @@ main {
         background-color: #ff000000;
         font-size: $sml-font-size;
         border: none;
+        letter-spacing: 3px;
       }
 
       .modalButton:hover {
-        box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.4);
+        letter-spacing: 5px;
       }
 
       a {
@@ -224,8 +223,6 @@ main {
       position: fixed;
       top: 0%;
       right: 0%;
-
-      //grid-template: 1fr auto 1fr / 1fr auto 1fr;
       
       grid-template: auto / auto;
       justify-content: center;
@@ -243,10 +240,10 @@ main {
       &__block {
         display: grid;
         grid-template: 1fr auto / 1fr;
-       // grid-column: 2 / 3;
-       // grid-row: 2 / 3;
+        row-gap: 10px;
+        margin: 10%;
+        
         background-color: #000000b9;
-
         border: 4px double white;
         border-radius: 15px;
       }
