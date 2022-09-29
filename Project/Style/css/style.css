@@ -30,6 +30,7 @@ body h1, body h2 {
   font-size: 24px;
   letter-spacing: 2px;
   text-align: center;
+  letter-spacing: 5px;
 }
 body .wrapper {
   grid-column-start: 2;
@@ -108,7 +109,7 @@ main .stuff-and-comp__card__image img, main .stuff-and-comp .card__image img {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 100%;
-  box-shadow: 0px 100px 700px 0px rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 100px 700px 0px rgba(255, 255, 255, 0.5);
 }
 main .stuff-and-comp__card__name, main .stuff-and-comp .card__name {
   font-size: 18px;
@@ -160,10 +161,9 @@ main .service-and-price__card .modalButton, main .service-and-price .card2 .moda
   background-color: rgba(255, 0, 0, 0);
   font-size: 16px;
   border: none;
-  letter-spacing: 3px;
 }
 main .service-and-price__card .modalButton:hover, main .service-and-price .card2 .modalButton:hover {
-  letter-spacing: 5px;
+  text-decoration: underline;
 }
 main .service-and-price__card a, main .service-and-price .card2 a {
   text-decoration: none;
@@ -178,7 +178,7 @@ main .service-and-price .modalWindow {
   position: fixed;
   top: 0%;
   right: 0%;
-  grid-template: auto/auto;
+  grid-template: minmax(auto, 40%)/minmax(auto, 40%);
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -392,6 +392,9 @@ footer p a:hover {
   main .service-and-price__card a, main .service-and-price .card2 a {
     font-size: 12px;
   }
+  main .service-and-price .modalWindow {
+    grid-template: minmax(auto, 60%)/minmax(auto, 75%);
+  }
   main .contact-details {
     row-gap: 10px;
   }
@@ -441,5 +444,10 @@ footer p a:hover {
   }
   footer p {
     font-size: 16px;
+  }
+}
+@media (max-width: 460px) {
+  main .service-and-price .modalWindow {
+    grid-template: minmax(auto, 95%)/minmax(auto, 95%);
   }
 }

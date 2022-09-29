@@ -48,6 +48,7 @@ body {
     font-size: $big-font-size;
     letter-spacing: 2px;
     text-align: center;
+    letter-spacing: 5px;
   }
 
   .wrapper {
@@ -132,12 +133,12 @@ main {
         row-gap: 15px;
 
         border-bottom: 1px solid white;
-          
+      
         img {
           width: 100%;
           object-fit: cover;
           border-radius: 100%;
-          box-shadow: 0px 100px 700px 0px rgba(255, 255, 255, 0.4);
+          box-shadow: 0px 100px 700px 0px rgba(255, 255, 255, 0.5);
         }
       }
       
@@ -200,11 +201,11 @@ main {
         background-color: #ff000000;
         font-size: $sml-font-size;
         border: none;
-        letter-spacing: 3px;
+
       }
 
       .modalButton:hover {
-        letter-spacing: 5px;
+        text-decoration: underline;
       }
 
       a {
@@ -224,7 +225,7 @@ main {
       top: 0%;
       right: 0%;
       
-      grid-template: auto / auto;
+      grid-template: minmax(auto, 40%) / minmax(auto, 40%);
       justify-content: center;
       align-items: center;
       align-content: center;
@@ -271,7 +272,6 @@ main {
         &_big {
           font-size: $big-font-size;
         }
-      
       }
     }
   }
@@ -493,6 +493,10 @@ footer {
         }
   
       }
+
+      .modalWindow {      
+        grid-template: minmax(auto, 60%) / minmax(auto, 75%);
+      }
     }
     
     .contact-details {
@@ -586,5 +590,15 @@ footer {
     }
   }
 
+}
+
+@media (max-width: 460px) { // то что происходит до 460px 
+  main {
+    .service-and-price {
+      .modalWindow {      
+        grid-template: minmax(auto, 95%) / minmax(auto, 95%);
+      }
+    }
+  }
 }
 
