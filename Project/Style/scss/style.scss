@@ -201,7 +201,6 @@ main {
         background-color: #ff000000;
         font-size: $sml-font-size;
         border: none;
-
       }
 
       .modalButton:hover {
@@ -360,6 +359,7 @@ footer {
 
     h1, h2 {
       font-size: $big2-font-size;
+      letter-spacing: 3px;
     }
 
     .wrapper {
@@ -595,8 +595,34 @@ footer {
 @media (max-width: 460px) { // то что происходит до 460px 
   main {
     .service-and-price {
+
+      &__card, .card2 {
+  
+        &__name {
+          font-size: $mid2-font-size;
+        }
+  
+        &__price {
+          font-size: $sml2-font-size;
+        }
+  
+        .modalButton {
+          font-size: $mid2-font-size;
+        }
+      }
+  
       .modalWindow {      
         grid-template: minmax(auto, 95%) / minmax(auto, 95%);
+      }
+    }
+    .contact-details {
+      row-gap: $small-gap;
+  
+      &__block, .block {
+        grid-template: repeat(5, auto) / 1fr;
+        &__map {
+          grid-column: 1 ;
+        }
       }
     }
   }

@@ -291,6 +291,7 @@ footer p a:hover {
   }
   body h1, body h2 {
     font-size: 16px;
+    letter-spacing: 3px;
   }
   body .wrapper {
     row-gap: 10px;
@@ -447,7 +448,25 @@ footer p a:hover {
   }
 }
 @media (max-width: 460px) {
+  main .service-and-price__card__name, main .service-and-price .card2__name {
+    font-size: 15px;
+  }
+  main .service-and-price__card__price, main .service-and-price .card2__price {
+    font-size: 12px;
+  }
+  main .service-and-price__card .modalButton, main .service-and-price .card2 .modalButton {
+    font-size: 15px;
+  }
   main .service-and-price .modalWindow {
     grid-template: minmax(auto, 95%)/minmax(auto, 95%);
+  }
+  main .contact-details {
+    row-gap: 10px;
+  }
+  main .contact-details__block, main .contact-details .block {
+    grid-template: repeat(5, auto)/1fr;
+  }
+  main .contact-details__block__map, main .contact-details .block__map {
+    grid-column: 1;
   }
 }
