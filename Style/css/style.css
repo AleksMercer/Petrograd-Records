@@ -8,8 +8,9 @@ body {
   color: white;
   display: grid;
   grid-template: 1fr/1fr minmax(1100px, 1300px) 1fr;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
 }
 body .topButton {
   display: none;
@@ -52,8 +53,9 @@ header {
 header .menu {
   display: grid;
   grid-template: 1fr/repeat(3, 250px);
-  -moz-column-gap: 15px;
-       column-gap: 15px;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
 }
 header .menu__button {
   color: white;
@@ -90,7 +92,9 @@ main .stuff-and-comp__info span {
 main .stuff-and-comp__cards {
   display: grid;
   grid-template: 1fr/repeat(5, 200px);
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 main .stuff-and-comp__card, main .stuff-and-comp .card {
   display: grid;
@@ -109,7 +113,8 @@ main .stuff-and-comp__card__image img, main .stuff-and-comp .card__image img {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 100%;
-  box-shadow: 0px 100px 700px 0px rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0px 100px 700px 0px rgba(255, 255, 255, 0.5);
+          box-shadow: 0px 100px 700px 0px rgba(255, 255, 255, 0.5);
 }
 main .stuff-and-comp__card__name, main .stuff-and-comp .card__name {
   font-size: 18px;
@@ -131,7 +136,9 @@ main .service-and-price {
 main .service-and-price__cards {
   display: grid;
   grid-template: 1fr 1fr/repeat(4, 250px);
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   row-gap: 20px;
 }
 main .service-and-price__card, main .service-and-price .card2 {
@@ -179,9 +186,14 @@ main .service-and-price .modalWindow {
   top: 0%;
   right: 0%;
   grid-template: minmax(auto, 40%)/minmax(auto, 40%);
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   height: 100%;
   width: 100%;
   backdrop-filter: blur(10px);
@@ -235,7 +247,8 @@ main .contact-details__block__map, main .contact-details .block__map {
 main .contact-details__block__map iframe, main .contact-details .block__map iframe {
   width: 100%;
   height: 400px;
-  filter: grayscale(1) invert(100%);
+  -webkit-filter: grayscale(1) invert(100%);
+          filter: grayscale(1) invert(100%);
 }
 main .contact-details__block p, main .contact-details .block p {
   font-size: 18px;
@@ -311,7 +324,9 @@ footer p a:hover {
     grid-template: repeat(3, 1fr)/1fr;
     row-gap: 15px;
     justify-items: center;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: fixed;
     height: 100%;
     width: 100%;
@@ -327,10 +342,12 @@ footer p a:hover {
     border: none;
   }
   header .menu-mobile .first {
-    align-self: end;
+    -ms-flex-item-align: end;
+        align-self: end;
   }
   header .menu-mobile .last {
-    align-self: start;
+    -ms-flex-item-align: start;
+        align-self: start;
   }
   header .menu-mobile__button:hover {
     font-size: 24px;
@@ -353,7 +370,9 @@ footer p a:hover {
   main .stuff-and-comp .double {
     width: 50%;
     grid-column: 1/3;
-    order: -2;
+    -webkit-box-ordinal-group: -1;
+        -ms-flex-order: -2;
+            order: -2;
   }
   main .stuff-and-comp__card, main .stuff-and-comp .card {
     margin: 0 auto;
@@ -361,7 +380,8 @@ footer p a:hover {
     row-gap: 10px;
   }
   main .stuff-and-comp__card__image img, main .stuff-and-comp .card__image img {
-    box-shadow: 0px 115px 500px 0px rgba(255, 255, 255, 0.4);
+    -webkit-box-shadow: 0px 115px 500px 0px rgba(255, 255, 255, 0.4);
+            box-shadow: 0px 115px 500px 0px rgba(255, 255, 255, 0.4);
   }
   main .stuff-and-comp__card__name, main .stuff-and-comp .card__name {
     font-size: 15px;
@@ -401,7 +421,9 @@ footer p a:hover {
   }
   main .contact-details__block, main .contact-details .block {
     justify-items: center;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 10px;
   }
   main .contact-details__block__map iframe, main .contact-details .block__map iframe {
