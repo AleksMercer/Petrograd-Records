@@ -9,7 +9,10 @@
 ## 📖 More about the project
   *	**Project Status**: Completed.
   *	**Adaptivity to different screens**: yes.
-  *	**Tasted & work on**: google chrome, firefox, safari.
+  *	**Tasted & work on**:
+    *	Google Chrome (blink)
+    *	FireFox (quantum)
+    *	Safari (webkit)
 ## 🔍 Technical info
   *	Has modal windows.
   *	Has a js-scroll to header & different parts.
